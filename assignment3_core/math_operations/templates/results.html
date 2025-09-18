@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Assignment #3</h1>
+    <h2>Python Script Result</h2>
+
+    <h3>Original Values:</h3>
+    <ul>
+      <li>x: {{ original.x }}</li>
+      <li>y: {{ original.y }}</li>
+      <li>z: {{ original.z }}</li>
+    </ul>
+
+    <h3>Calculation Steps:</h3>
+    <ol>
+      <li>Initial value of x: <strong>{{ original.x }}</strong></li>
+      {% for s in steps %}
+        <li>
+          After {{ s.op }}:
+          {% if s.skipped %}
+            <em>skipped ({{ s.reason }})</em>
+          {% else %}
+            <strong>{{ s.x }}</strong>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ol>
+
+    <p><strong>Result: x + y + z is: {{ x_final }} + {{ original.y }} + {{ original.z }} = {{ final_result }}</strong></p>
+
+    <p><a href="/">Back</a></p>
+  </body>
+</html>
